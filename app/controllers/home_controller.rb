@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
-  # リクエストしてきたユーザーを認証する。
-  # ユーザーがログイン済みの場合はアクセスを許可して、未ログインの場合はroot_pathにリダイレクトする。
+
 
   def index
     # user_signed_in?: ログイン済みの場合はtrueを返す。
