@@ -15,8 +15,7 @@
 
  <% if user_signed_in? %>
   <div class="image_top">
-    <%= image_tag current_user.avatar.to_s %>
-
+    <%= image_tag current_user.avatar.url %>
   </div>
   <% else %>
 

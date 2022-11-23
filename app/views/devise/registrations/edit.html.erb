@@ -22,18 +22,18 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %> <i>(設定するパスワードを改めてご記入ください)</i><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(設定するパスワードを改めてご記入ください)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
   <div class="field">
     <%= f.label :avatar %>
     <%= f.file_field :avatar %>
+  </div>
+
+    <div class="field">
+    <%= f.label :current_password %><i>(変更を反映させる場合はパスワードを入力)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
   <div class="actions">

@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_22_005608) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_23_030223) do
+  create_table "posts", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "room_name", null: false
+    t.integer "room_price", null: false
+    t.text "room_info"
+    t.integer "room_address_postcode", null: false
+    t.string "room_address_prefecture", null: false
+    t.string "room_address_town_village", null: false
+    t.string "room_address_other"
+    t.string "room_photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
