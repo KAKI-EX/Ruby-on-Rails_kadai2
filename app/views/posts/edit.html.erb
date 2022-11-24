@@ -2,6 +2,8 @@
 
 <div><%= link_to "お部屋貸し出し画面TOPへ", posts_path, class: "text-white" %></div>
 
+ <%= render "shared/error", obj: @post %>
+
 <%= form_with model:@post do |f| %>
   <table>
     <tr>
@@ -44,8 +46,6 @@
       <td><%= f.file_field :room_photo %></td>
     </tr>
   </table>
-
-  <%= f.hidden_field :user_id, value: current_user.id %>
 
   <%= f.submit "編集完了"%>
 

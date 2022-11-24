@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
-      render "new"
+      render "new",status: :unprocessable_entity
     end
   end
 
@@ -52,7 +52,7 @@ class PostsController < ApplicationController
     ))
       redirect_to posts_path
     else
-      render "edit"
+      render "edit",status: :unprocessable_entity
     end
   end
 
