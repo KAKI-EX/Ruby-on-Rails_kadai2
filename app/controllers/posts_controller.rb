@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post_current_user = current_user.posts
+    @post = Post.find(params[:id])
   end
 
   def edit
@@ -38,8 +38,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post_current_user = current_user.posts
-    if @post_current_user.update(params.require(:post).permit(
+    @post = Post.find(params[:id])
+    if @post.update(params.require(:post).permit(
       :user_id,
       :room_name,
       :room_price,
