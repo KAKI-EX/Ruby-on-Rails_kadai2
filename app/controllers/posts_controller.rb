@@ -23,6 +23,7 @@ class PostsController < ApplicationController
       :room_photo
     ))
     if @post.save
+      flash[:notice] = "お部屋の登録が完了しました"
       redirect_to posts_path
     else
       render "new",status: :unprocessable_entity
@@ -50,7 +51,8 @@ class PostsController < ApplicationController
       :room_address_other,
       :room_photo
     ))
-      redirect_to posts_path
+    flash[:notice] = "#{@post.room_address_prefecture} #{@post.room_address_town_village}の編集が完了しました"
+    redirect_to posts_path
     else
       render "edit",status: :unprocessable_entity
     end
@@ -59,6 +61,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    flash[:notice] = "#{@post.room_address_prefecture} #{@post.room_address_town_village}のお部屋の情報を削除しました"
     redirect_to posts_path
   end
 
