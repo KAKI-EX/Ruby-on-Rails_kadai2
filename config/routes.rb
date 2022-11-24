@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+
+  #下記1行、Deviseがrails7 turboに対応していないため、表示されないエラーメッセージ解消のために追記
+  devise_for :users, controllers: { registrations: "registrations" } # 上はsessionsを指定したが、今回はregistrationsを指定する
+
   get 'posts/index'
   get 'home/index'
-  devise_for :users
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -15,5 +19,5 @@ Rails.application.routes.draw do
   end
 
   resources :posts
-  
+
 end
