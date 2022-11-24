@@ -1,12 +1,11 @@
-<h1>部屋の貸し出し</h1>
+<h3>お部屋の詳細</h3>
 
-<div><%= link_to "お部屋の貸し出し登録", new_post_path, class: "text-white" %></div>
-
-<h3>投稿一覧</h3>
+<div><%= link_to "お部屋貸し出し画面TOPへ", posts_path, class: "text-white" %></div>
 
 <table>
   <thead>
     <tr>
+      <th>登録画像</th>
       <th>更新日時</th>
       <th>投稿日時</th>
       <th>部屋の名前</th>
@@ -19,17 +18,22 @@
   </thead>
 
   <tbody>
-<% @posts_current_user.each do |post| %>
+<%= @post_current_user.each do |post| %>
     <tr>
-      <td><%= post.id %></td>
+      <td><%= image_tag post.room_photo.url %></td>
       <td><%= post.updated_at.strftime('%Y年%-m月%-d日') %></td>
       <td><%= post.created_at.strftime('%Y年%-m月%-d日') %></td>
       <td><%= post.room_name %></td>
       <td><%= post.room_price %></td>
+      <td><%= post.room_address_postcode %></td>
       <td><%= post.room_address_prefecture %></td>
-      <td><%= link_to "詳細", post, class: "text-white" %></td>
-      <td><%= link_to "編集", edit_post_path(post.id), class: "text-white" %></td>
+      <td><%= post.room_address_town_village %></td>
+      <td><%= post.room_address_other %></td>
+      <td><%= post.room_info %></td>
     </tr>
+
 <% end %>
+
+
 </tbody>
 </table>

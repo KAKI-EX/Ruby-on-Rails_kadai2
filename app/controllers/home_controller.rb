@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
 
+  before_action :authenticate_user!, only: [:index]
 
   def index
     # user_signed_in?: ログイン済みの場合はtrueを返す。
