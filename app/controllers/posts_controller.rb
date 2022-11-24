@@ -23,7 +23,7 @@ class PostsController < ApplicationController
       :room_photo
     ))
     if @post.save
-      redirect_to :home_index
+      redirect_to posts_path
     else
       render "new"
     end
@@ -57,6 +57,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
 end
