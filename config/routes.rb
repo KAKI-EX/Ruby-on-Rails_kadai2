@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'reservations/index'
 
   #下記1行、Deviseがrails7 turboに対応していないため、表示されないエラーメッセージ解消のために追記
   devise_for :users, controllers: { registrations: "registrations" } # 上はsessionsを指定したが、今回はregistrationsを指定する
@@ -19,5 +20,6 @@ Rails.application.routes.draw do
   end
 
   resources :posts
+  resources :reservations
 
 end
