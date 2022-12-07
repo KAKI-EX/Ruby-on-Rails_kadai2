@@ -1,0 +1,31 @@
+<h3> 予約画面　</h3>
+
+<%= render "shared/error", obj: @reservation %>
+<%=r form_with model:@reservation do |f|%>
+
+<table>
+  <tr>
+    <th><%= f.label :check_in, "チェックイン予定日" %></th>
+    <td><%= f.date_field :check_in %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :check_out, "チェックアウト予定日" %></th>
+    <td><%= f.date_field :check_out %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :stay_count, "宿泊日数" %></th>
+    <td><%= f.text_field :stay_count %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :peaple_count, "ご利用人数" %></th>
+    <td><%= f.text_field :peaple_count %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :room_fee, "ご利用料金" %></th>
+    <td><%= f.date_field :peaple_count %></td>
+  </tr>
+</table>
+
+  <%= f.submit "予約完了"%>
+
+<% end %>
